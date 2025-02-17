@@ -108,6 +108,54 @@
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const inputField = document.querySelector(".input-area input");
+      const sendButton = document.querySelector(".input-area button");
+      const chatWindow = document.querySelector(".chat-window");
+
+      // Example wisdom data
+      const wisdomData = [
+        { query: "hello", response: "Greetings! How may I share ancient wisdom with you today?" },
+        { query: "proverb", response: "A proverb is the horse which can carry one swiftly to the discovery of ideas." },
+        // Add more wisdom data here
+      ];
+
+      // Function to add a message to the chat window
+      function addMessage(sender, text) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message", sender === "You" ? "user" : "");
+        messageDiv.innerHTML = `<div class="sender">${sender}:</div><div class="text">${text}</div>`;
+        chatWindow.appendChild(messageDiv);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }
+
+      // Function to handle the send button click
+      function handleSend() {
+        const userInput = inputField.value.trim();
+        if (userInput) {
+          addMessage("You", userInput);
+          inputField.value = "";
+
+          // Search for wisdom data
+          const wisdom = wisdomData.find(item => userInput.toLowerCase().includes(item.query));
+          if (wisdom) {
+            addMessage("Yoruba Wisdom", wisdom.response);
+          } else {
+            addMessage("Yoruba Wisdom", "I'm sorry, I don't have wisdom for that query. Try asking something else.");
+          }
+        }
+      }
+
+      // Event listeners
+      sendButton.addEventListener("click", handleSend);
+      inputField.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          handleSend();
+        }
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="container">
