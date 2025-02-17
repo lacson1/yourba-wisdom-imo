@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yoruba Wisdom ChatGPT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #4a90e2, #50a7f8);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 600;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+    }
+    .header::after {
+      content: "Unlock the ancient wisdom of the Yoruba.";
+      display: block;
+      font-size: 0.75em;
+      font-weight: 400;
+      margin-top: 5px;
+      opacity: 0.9;
+    }
+    .chat-window {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+    .message {
+      margin-bottom: 20px;
+      animation: fadeIn 0.4s ease;
+    }
+    .message:last-child {
+      margin-bottom: 0;
+    }
+    .message .sender {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .message .text {
+      background: #e0f7fa;
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: #555;
+      display: inline-block;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .message.user .text {
+      background: #c8e6c9;
+    }
+    .input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    .input-area input {
+      flex: 1;
+      border: none;
+      padding: 15px;
+      font-size: 1em;
+      outline: none;
+      border-bottom-left-radius: 10px;
+    }
+    .input-area button {
+      border: none;
+      background: #4a90e2;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 1em;
+      cursor: pointer;
+      border-bottom-right-radius: 10px;
+      transition: background 0.3s ease;
+    }
+    .input-area button:hover {
+      background: #3b7dc4;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      Yoruba Wisdom ChatGPT
+    </div>
+    <div class="chat-window">
+      <div class="message user">
+        <div class="sender">You:</div>
+        <div class="text">Hello, Yoruba Wisdom!</div>
+      </div>
+      <div class="message">
+        <div class="sender">Yoruba Wisdom:</div>
+        <div class="text">Greetings! How may I share ancient wisdom with you today?</div>
+      </div>
+    </div>
+    <div class="input-area">
+      <input type="text" placeholder="Enter your message...">
+      <button>Send</button>
+    </div>
+  </div>
+</body>
+</html>
